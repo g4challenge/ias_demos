@@ -2,3 +2,5 @@ pandas
 matplotlib
 scipy
 scikit-learn
+mitoinstaller
+jupyterlab
