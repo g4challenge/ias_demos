@@ -4,22 +4,22 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 data = {
-    "x": [1,2,1,3,4,3,2,10,11,12,11,10,13,12],
-    "y": [2,2,6,1,3,4,5,10,10,11,12,13,12,14]
+    "x1": [1,2,1,3,4,3,2,10,11,12,11,10,13,12],
+    "x2": [2,2,6,1,3,4,5,10,10,11,12,13,12,14]
 }
 
 df = pd.DataFrame(data)
 df.plot(
-    x="x",
-    y="y",  
+    x="x1",
+    y="x2",  
     kind="scatter",  title="Datenset",  
     figsize=(10,10)
 )
 
-for item in range(len(data["x"])):  
+for item in range(len(data["x1"])):  
     plt.text(
-        x=data["x"][item]+0.2,
-        y=data["y"][item]+0.2,  s=item
+        x=data["x1"][item]+0.2,
+        y=data["x2"][item]+0.2,  s=item
 )
 
 # %%
@@ -46,14 +46,14 @@ df2 = pd.concat([df, df1], axis=1)
 
 plt.figure(figsize=(10,10))  
 plt.scatter(
-    x=df2.x.loc[df2.cluster==0],  
-    y=df2.y.loc[df2.cluster==0],  
+    x=df2.x1.loc[df2.cluster==0],  
+    y=df2.x2.loc[df2.cluster==0],  
     label="Cluster 0"
 )
 
 plt.scatter(
-    x=df2.x.loc[df2.cluster==1],  
-    y=df2.y.loc[df2.cluster==1],  
+    x=df2.x1.loc[df2.cluster==1],  
+    y=df2.x2.loc[df2.cluster==1],  
     label="Cluster 1"
 )
 plt.scatter(
