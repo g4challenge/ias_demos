@@ -13,7 +13,7 @@ import tensorflow as tf
 import tensorflow_datasets as tfds
 
 BATCH_SIZE = 64
-EPOCHS = 100
+EPOCHS = 10
 AUTOTUNE = tf.data.AUTOTUNE
 
 # load MNIST
@@ -61,10 +61,14 @@ model.compile(
 
 model.fit(ds_train, epochs=EPOCHS, validation_data=ds_test)
 # %%
-from matplotlib import pyplot
-X_train = ds_train
-pyplot.imshow(X_train[0][0], cmap=pyplot.get_cmap('gray'))
-pyplot.show()
+#from matplotlib import pyplot
+#X_train = ds_train
+#pyplot.imshow(X_train[0][0], cmap=pyplot.get_cmap('gray'))
+# pyplot.show()
 
 
+# %%
+import bentoml
+#bentoml.tensorflow.save_model("tensorflow_mnist", model)
+bentoml.keras.save_model("tensorflow_mnist", model)
 # %%
