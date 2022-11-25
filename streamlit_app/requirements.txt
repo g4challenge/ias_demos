@@ -1,0 +1,5 @@
+streamlit
+Pillow
+streamlit_drawable_canvas
+bentoml
+opencv-python

@@ -57,3 +57,5 @@ if st.button('Predict'):
     #val = client.call("predict_image", img)
     st.write(f'result: {np.argmax(res[0])}')
     st.bar_chart(res[0])
+
+# docker build -t g4challenge/bentoml_tensorflow_mnist:latest .

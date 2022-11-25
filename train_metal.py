@@ -72,3 +72,11 @@ import bentoml
 #bentoml.tensorflow.save_model("tensorflow_mnist", model)
 bentoml.keras.save_model("tensorflow_mnist", model)
 # %%
+# bentoml serve tensorflow_mnist:latest --enable-microbatch --workers 1 --max-batch-size 1 --batch-interval 1
+# bentoml build 
+# bentoml containerize tensorflow_mnist_demo:latest --tag latest
+
+
+# %%
+# Streamlit
+# 
