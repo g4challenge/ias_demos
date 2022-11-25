@@ -9,6 +9,10 @@
 
 #%%
 
+# Normal Setup for Users:
+# pip install tensorflow
+# pip install tensorflow_datasets
+
 import tensorflow as tf
 import tensorflow_datasets as tfds
 
@@ -50,12 +54,12 @@ model = tf.keras.Sequential([
     tf.keras.layers.Conv2D(64, 3, padding='same', activation='relu'),
     tf.keras.layers.MaxPooling2D(),
     tf.keras.layers.Flatten(),
-    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(256, activation='relu'),
     tf.keras.layers.Dense(10)
 ])
 
 model.compile(
-    optimizer='sgd',
+    optimizer='adam',
     loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
     metrics=['accuracy'])
 
@@ -76,7 +80,7 @@ bentoml.keras.save_model("tensorflow_mnist", model)
 # %%
 # bentoml serve service:svc --reload   
 # bentoml build 
-# bentoml containerize tensorflow_mnist_demo:latest --tag latest
+# bentoml containerize tensorflow_mnist_demo:latest
 
 
 # %%
