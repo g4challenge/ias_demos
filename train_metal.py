@@ -71,12 +71,17 @@ model.fit(ds_train, epochs=EPOCHS, validation_data=ds_test)
 import bentoml
 #bentoml.tensorflow.save_model("tensorflow_mnist", model)
 bentoml.keras.save_model("tensorflow_mnist", model)
+# bentoml models list
+# bentoml list 
 # %%
-# bentoml serve tensorflow_mnist:latest --enable-microbatch --workers 1 --max-batch-size 1 --batch-interval 1
+# bentoml serve service:svc --reload   
 # bentoml build 
 # bentoml containerize tensorflow_mnist_demo:latest --tag latest
 
 
 # %%
 # Streamlit
-# 
+# streamlit run streamlit_app/streamlit_mnist.py
+# Docker Streamlit
+# docker build -t streamlit_mnist_demo .
+# docker run -p 8501:8501 streamlit_mnist_demo
