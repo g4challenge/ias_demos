@@ -4,4 +4,6 @@ scipy
 scikit-learn
 mitoinstaller
 jupyterlab
-#tensorflow
+tensorflow
+tensorflow-datasets
+bentoml
